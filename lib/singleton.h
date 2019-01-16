@@ -1,5 +1,11 @@
+#ifdef _WIN32
+#define DLLEXPORT __declspec( dllexport )
+#else
+#define DLLEXPORT
+#endif
+
 template<class T>
-class __declspec( dllexport ) Singleton
+class DLLEXPORT Singleton
 {
     Singleton() = default;
     Singleton(const Singleton &) = delete;
