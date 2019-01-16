@@ -1,0 +1,3 @@
+LIBRARY __lib.dll
+
+EXPORTS func
