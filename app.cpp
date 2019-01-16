@@ -1,10 +1,11 @@
 #include <iostream>
 #include "__lib.h"
 #include "singleton.h"
+#include <atomic>
 
 int main() {
-    *(Singleton<int>::getInstance()) = 30;
+    Singleton<std::atomic<int>>::getInstance()->store(30);
     func();
-    std::cout << "app: " << *(Singleton<int>::getInstance()) << std::endl;
+    std::cout << "app: " << Singleton<std::atomic<int>>::getInstance()->load() << std::endl;
     return 0;
 }
