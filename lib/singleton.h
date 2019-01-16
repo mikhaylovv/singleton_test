@@ -1,5 +1,5 @@
 template<class T>
-class Singleton
+class __declspec( dllexport ) Singleton
 {
     Singleton() = default;
     Singleton(const Singleton &) = delete;
@@ -8,13 +8,8 @@ class Singleton
     Singleton & operator = (Singleton &&) = delete;
     
 public:
-    static T * getInstance() {
-        static Singleton sin;
-        return &sin.data;
-    }
+    static T * getInstance();
     
 private:
     T data;
 };
-
-// Singleton<logger *>::getInstance() = new logger();

@@ -1,2 +1,1 @@
-include_directories(..)
-add_library(__lib SHARED __lib.cpp __lib.def)
+add_library(__lib SHARED __lib.cpp singleton.cpp __lib.def)
